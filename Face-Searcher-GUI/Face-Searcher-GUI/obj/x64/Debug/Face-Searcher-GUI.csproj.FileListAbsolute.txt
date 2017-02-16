@@ -29,3 +29,6 @@ C:\Users\Woody\Desktop\Face-Searcher-GUI\Face-Searcher-GUI\obj\x64\Debug\Face_Se
 C:\Users\Woody\Desktop\Face-Searcher-GUI\Face-Searcher-GUI\obj\x64\Debug\Face_Searcher_GUI.Forms.EmailSetup.resources
 C:\Users\Woody\Desktop\Face-Searcher-GUI\Face-Searcher-GUI\obj\x64\Debug\Face_Searcher_GUI.Forms.DefaultAOI.resources
 C:\Users\Woody\Desktop\Face-Searcher-GUI\Face-Searcher-GUI\obj\x64\Debug\Face_Searcher_GUI.Forms.InvalidLicense.resources
+C:\Users\Woody\Desktop\Git\Face-Searcher-GUI\Face-Searcher-GUI\Face-Searcher-GUI\bin\x64\Debug\Face-Searcher-GUI.exe.config
+C:\Users\Woody\Desktop\Git\Face-Searcher-GUI\Face-Searcher-GUI\Face-Searcher-GUI\obj\x64\Debug\Face-Searcher-GUI.exe
+C:\Users\Woody\Desktop\Git\Face-Searcher-GUI\Face-Searcher-GUI\Face-Searcher-GUI\obj\x64\Debug\Face-Searcher-GUI.pdb

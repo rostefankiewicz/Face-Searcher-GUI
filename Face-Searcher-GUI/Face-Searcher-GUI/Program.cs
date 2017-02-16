@@ -47,6 +47,8 @@ namespace Face_Searcher_GUI
         internal static string allevateURL = "http://allevate.com?utm_source=FaceSearcher_Edge";
         const string licenseFile = @"C:\Allevate\Face-Searcher\AureusSDK_License.txt";
 
+        //Test committ
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
