@@ -17,6 +17,7 @@ namespace Face_Searcher_GUI
         //internal static Dictionary<string, bool> indexInUse = new Dictionary<string, bool>();
         internal static int numberOfLicense = 1;
         internal static int usedLicense = 0;
+        internal static bool killApplication = false;
 
         //Default AOI settings
         internal static AOISettings defaultAOI;
@@ -31,6 +32,7 @@ namespace Face_Searcher_GUI
         internal static LicensePage LP;
         internal static NiFi NF;
         internal static DefaultAOI DA;
+        internal static InvalidLicense IL;
 
         //Aureus edge
         internal static IntPtr mp_aureus;
@@ -142,13 +144,21 @@ namespace Face_Searcher_GUI
                 if (!canContinue)
                 {
                     //Display the error form
-                    InvalidLicense IL = new InvalidLicense();
+                    IL = new InvalidLicense();
                     IL.errorMessage = failReason;
                     IL.loadDisplay();
                     IL.ShowDialog();
+                    if (killApplication) { canContinue = true; break; }
                 }
                 firstLoop = false;
             }
+
+            //Kill the application. We needed to exit the loop first
+            if (canContinue && killApplication)
+            {
+                exitApp(true);
+            }
+
         }
 
         /// <summary>
@@ -224,16 +234,17 @@ namespace Face_Searcher_GUI
         /// </summary>
         internal static void getLicenseNumber()
         {
-            AureusEdge.GetLicenseInfo(mp_aureus, msg);
-            string info = msg.ToString();
-            int a = info.IndexOf("=")+2;
-            int b = info.IndexOf("Time remaining");
-            info = info.Substring(a, b - a).Trim();
             try
             {
+                AureusEdge.GetLicenseInfo(mp_aureus, msg);
+                string info = msg.ToString();
+                int a = info.IndexOf("=") + 2;
+                int b = info.IndexOf("Time remaining");
+                info = info.Substring(a, b - a).Trim();
                 //Try to parse the number
                 numberOfLicense = Int32.Parse(info);
-            }catch
+            }
+            catch
             {
                 //If it fails, default to 1
                 numberOfLicense = 1;
@@ -269,12 +280,13 @@ namespace Face_Searcher_GUI
                 if (LP != null) { LP.Dispose(); }
                 if (NF != null) { NF.Dispose(); }
                 if (DA != null) { DA.Dispose(); }
+                if (IL != null) { IL.Dispose(); }
 
                 Application.Exit();
-                //if (exitEnvironment)
-                //{
-                //    Environment.Exit(0);
-                //}
+                if (exitEnvironment)
+                {
+                    Environment.Exit(0);
+                }
             }
             catch
             {

@@ -112,7 +112,8 @@ namespace Face_Searcher_GUI.Forms
         /// <param name="e"></param>
         private void exitButton_Click(object sender, EventArgs e)
         {
-            Program.exitApp();
+            Program.killApplication = true;
+            this.Dispose();
         }
     }
 }
