@@ -14,7 +14,6 @@ namespace Face_Searcher_GUI
         //Collection of Cameras
         internal static CameraCollection CAMS;
         internal static CameraCollection TempCAMs;
-        //internal static Dictionary<string, bool> indexInUse = new Dictionary<string, bool>();
         internal static int numberOfLicense = 1;
         internal static int usedLicense = 0;
         internal static bool killApplication = false;

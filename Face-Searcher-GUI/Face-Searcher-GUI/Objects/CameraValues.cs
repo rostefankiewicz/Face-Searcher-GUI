@@ -65,7 +65,7 @@ namespace Face_Searcher_GUI.Objects
         public string frame_number_tag = "FrameNumber";
         public string utc_time = "true";
         public string utc_time_tag = "utcTime";
-        public string ranked_results = "false";
+        public string ranked_results = "true";
         public string ranked_results_n = "1";
         public string ranked_results_tag = "NumOfRankedResults";
         public string matched_person_name = "false";

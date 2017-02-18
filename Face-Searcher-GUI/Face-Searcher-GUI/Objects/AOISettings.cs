@@ -18,7 +18,7 @@ namespace Face_Searcher_GUI.Objects
         public string reduce_frame_step = "0";
         public string generate_templates = "false";
         public string perform_ranking = "false";
-        public string verification_thresh = "0.00";
+        public string verification_thresh = "0.000";
         //public string force_every_frame = "true";
         //public string save_local = "false";
         //public string write_debug = "false";

@@ -302,6 +302,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
+            //This is the advanced settings link
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.cancelButton);

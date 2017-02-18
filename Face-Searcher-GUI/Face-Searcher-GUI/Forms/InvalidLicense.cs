@@ -40,7 +40,7 @@ namespace Face_Searcher_GUI.Forms
         private string getErrorMessage()
         {
             string message = "";
-            message = "The license retreived for this machine is invalid.\r\nError: ";
+            message = "The license retrieved for this machine is invalid. Please contact Allevate or your supplier for a valid license.\r\n\r\nError message: ";
             switch (errorMessage)
             {
                 case "FILE-EMPTY":
