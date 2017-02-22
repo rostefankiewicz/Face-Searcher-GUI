@@ -56,6 +56,8 @@
             this.fromEmail = new System.Windows.Forms.TextBox();
             this.accountPassword = new System.Windows.Forms.TextBox();
             this.sendEmail = new System.Windows.Forms.CheckBox();
+            this.facilityTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -336,10 +338,30 @@
             this.sendEmail.Text = "Receive notification emails";
             this.sendEmail.UseVisualStyleBackColor = true;
             // 
+            // facilityTextBox
+            // 
+            this.facilityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.facilityTextBox.Location = new System.Drawing.Point(379, 348);
+            this.facilityTextBox.Name = "facilityTextBox";
+            this.facilityTextBox.Size = new System.Drawing.Size(292, 23);
+            this.facilityTextBox.TabIndex = 68;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(376, 328);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 17);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "Facility";
+            // 
             // EmailSetup
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(682, 553);
+            this.Controls.Add(this.facilityTextBox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.sendEmail);
             this.Controls.Add(this.accountPassword);
             this.Controls.Add(this.fromEmail);
@@ -403,5 +425,7 @@
         private System.Windows.Forms.TextBox fromEmail;
         private System.Windows.Forms.TextBox accountPassword;
         private System.Windows.Forms.CheckBox sendEmail;
+        private System.Windows.Forms.TextBox facilityTextBox;
+        private System.Windows.Forms.Label label10;
     }
 }

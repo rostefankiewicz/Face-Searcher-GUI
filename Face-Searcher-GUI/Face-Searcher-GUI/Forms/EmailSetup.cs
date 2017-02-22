@@ -42,6 +42,7 @@ namespace Face_Searcher_GUI.Forms
             this.accountName.Text = Program.email.emailAccountName;
             this.fromEmail.Text = Program.email.sender;
             this.accountPassword.Text = Program.email.password;
+            this.facilityTextBox.Text = Program.email.facility;
 
             if (Program.email.emailNotifications == "true")
             {
@@ -167,7 +168,7 @@ namespace Face_Searcher_GUI.Forms
             Program.email.emailAccountName = this.accountName.Text;
             Program.email.sender = this.fromEmail.Text;
             Program.email.password = this.accountPassword.Text;
-
+            Program.email.facility = this.facilityTextBox.Text;
             if (this.sendEmail.Checked)
             {
                 Program.email.emailNotifications = "true";

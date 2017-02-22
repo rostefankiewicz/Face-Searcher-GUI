@@ -15,6 +15,7 @@ namespace Face_Searcher_GUI.Objects
         public string contents = "";
         public List<string> receiver = new List<string>();
         public string emailNotifications = "true";
+        public string facility = "";
         //Camera Restart Info
         public string stream_timeout = "5"; //How long Aureus waits before saying this stream is bad
         public string camera_restart_interval = "5"; //Try to restart every X seconds
@@ -44,10 +45,12 @@ namespace Face_Searcher_GUI.Objects
                     try
                     {
                         this.stream_timeout = xmlDoc.GetElementsByTagName("stream_timeout")[0].InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&");
+                        this.facility = xmlDoc.GetElementsByTagName("facility")[0].InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&");
                     }
                     catch
                     {
                         this.stream_timeout = "5";
+                        this.facility = "";
                     }
                     this.camera_restart_interval = xmlDoc.GetElementsByTagName("camera_restart_interval")[0].InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&");
                     this.camera_restart_attempts = xmlDoc.GetElementsByTagName("camera_restart_attempts")[0].InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&");
@@ -82,6 +85,7 @@ namespace Face_Searcher_GUI.Objects
             rec = rec.Trim(',');
             ret.AppendFormat("<{0}>{1}</{0}>", "receiver", rec.Replace("<", "&lt;").Replace(">", "&gt;"));
             ret.AppendFormat("<{0}>{1}</{0}>", "emailNotifications", this.emailNotifications.Replace("<", "&lt;").Replace(">", "&gt;"));
+            ret.AppendFormat("<{0}>{1}</{0}>", "facility", this.facility.Replace("<", "&lt;").Replace(">", "&gt;"));
             ret.AppendFormat("</{0}>", "emailSettings");
             ret.AppendFormat("</{0}>", "emailConfiguration");
 
