@@ -80,8 +80,8 @@ namespace Face_Searcher_GUI.Objects
                     Program.CF.invokeStartButton();
                 }
 
-                //Sleep for 15 seconds
-                System.Threading.Thread.Sleep(15 * 1000);
+                //Sleep for 10 seconds
+                System.Threading.Thread.Sleep(10 * 1000);
             }
         }
     }
