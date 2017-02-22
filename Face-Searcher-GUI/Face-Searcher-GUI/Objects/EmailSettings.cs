@@ -16,9 +16,9 @@ namespace Face_Searcher_GUI.Objects
         public List<string> receiver = new List<string>();
         public string emailNotifications = "true";
         //Camera Restart Info
-        public string stream_timeout = "5";
-        public string camera_restart_interval = "5";
-        public string camera_restart_attempts = "10";
+        public string stream_timeout = "5"; //How long Aureus waits before saying this stream is bad
+        public string camera_restart_interval = "5"; //Try to restart every X seconds
+        public string camera_restart_attempts = "10"; //Total retry attempts before killing the camera
 
         /// <summary>
         /// Take the XML content and load the email settings
@@ -43,7 +43,7 @@ namespace Face_Searcher_GUI.Objects
                     this.emailNotifications = xmlDoc.GetElementsByTagName("emailNotifications")[0].InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&");
                     try
                     {
-                        this.stream_timeout = xmlDoc.GetElementsByTagName("camera_interruption_time")[0].InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&");
+                        this.stream_timeout = xmlDoc.GetElementsByTagName("stream_timeout")[0].InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&");
                     }
                     catch
                     {

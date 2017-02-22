@@ -330,6 +330,9 @@ namespace Face_Searcher_GUI.Forms
                         //Add camera by index
                         try
                         {
+                            //Create the folder
+                            Program.createPostFolder(CV.save_xml_folder);
+                            //Create the camera in Aureus Edge
                             AureusEdge.CreateCamera(Program.mp_aureus, Int32.Parse(CV.cameraIndex.Trim()), 2, Program.msg);
                         }
                         catch
@@ -339,10 +342,9 @@ namespace Face_Searcher_GUI.Forms
                         //Start Camera
                         AureusEdge.StartCameraByIndex(Int32.Parse(CV.cameraIndex.Trim()), Program.msg);
                         //Check the status
-                        if (AureusEdge.IsRunning(Int32.Parse(CV.cameraIndex.Trim())))
+                        if (AureusEdge.RunningStatus(Int32.Parse(CV.cameraIndex.Trim())) == 0)
                         {
                             //Good to go. Update the display
-                            CV.restartsTried = 0;
                             CV.running = true;
                             START.Text = "STOP";
                             START.BackColor = Color.Red;
@@ -412,13 +414,15 @@ namespace Face_Searcher_GUI.Forms
                         {
                             if (Program.usedLicense < Program.numberOfLicense)
                             {
+                                //Create the post folder needed for a camera
+                                Program.createPostFolder(Program.TempCAMs.cameras[i].save_xml_folder);
+                                //Create the camera
                                 AureusEdge.CreateCamera(Program.mp_aureus, Int32.Parse(Program.TempCAMs.cameras[i].cameraIndex.Trim()), 2, Program.msg);
                                 //Start Camera
                                 AureusEdge.StartCameraByIndex(Int32.Parse(Program.TempCAMs.cameras[i].cameraIndex.Trim()), Program.msg);
                                 //Check the status
-                                if (AureusEdge.IsRunning(Int32.Parse(Program.TempCAMs.cameras[i].cameraIndex.Trim())))
+                                if (AureusEdge.RunningStatus(Int32.Parse(Program.TempCAMs.cameras[i].cameraIndex.Trim())) == 0)
                                 {
-                                    Program.TempCAMs.cameras[i].restartsTried = 0;
                                     Program.TempCAMs.cameras[i].running = true;
                                     Program.usedLicense += 1;
                                 }

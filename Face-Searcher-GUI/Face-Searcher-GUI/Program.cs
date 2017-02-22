@@ -502,5 +502,24 @@ namespace Face_Searcher_GUI
             //Assign it and save it!
             writeToFile(Settings, newFile);
         }
+
+        /// <summary>
+        /// Create a directory
+        /// </summary>
+        /// <param name="folderName"></param>
+        internal static void createPostFolder(string folderName)
+        {
+            try
+            {
+                if (!System.IO.Directory.Exists(@"C:\Allevate\Face-Searcher\Results"))
+                {
+                    System.IO.Directory.CreateDirectory(@"C:\Allevate\Face-Searcher\Results");
+                }
+            }
+            catch
+            {
+                //Do nothing
+            }
+        }
     }
 }

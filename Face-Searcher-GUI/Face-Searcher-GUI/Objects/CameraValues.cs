@@ -9,7 +9,9 @@ namespace Face_Searcher_GUI.Objects
     public class CameraValues
     {
         public bool running = false;
-        public int restartsTried = 0;
+        public bool restartInitiated = false;
+        //public System.Threading.Thread restartThread;
+        public CameraRestart CR = null;
         //=================== cameraIndex
         public string cameraIndex = "0";
         //=================== cameraMetaDataSettings

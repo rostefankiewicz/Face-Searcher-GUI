@@ -180,6 +180,7 @@
     <Compile Include="Objects\AureusEdge.cs" />
     <Compile Include="Objects\CameraCollection.cs" />
     <Compile Include="Objects\CameraMonitor.cs" />
+    <Compile Include="Objects\CameraRestart.cs" />
     <Compile Include="Objects\CameraValues.cs" />
     <Compile Include="Objects\EmailSettings.cs" />
     <Compile Include="Program.cs" />
