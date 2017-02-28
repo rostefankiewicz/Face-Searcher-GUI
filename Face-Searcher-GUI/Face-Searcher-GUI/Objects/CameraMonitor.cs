@@ -81,7 +81,7 @@ namespace Face_Searcher_GUI.Objects
                 }
 
                 //Sleep for 10 seconds
-                System.Threading.Thread.Sleep(10 * 1000);
+                System.Threading.Thread.Sleep(1 * 1000);
             }
         }
     }

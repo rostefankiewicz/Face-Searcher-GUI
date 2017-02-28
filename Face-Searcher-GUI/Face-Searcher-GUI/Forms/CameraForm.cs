@@ -331,7 +331,8 @@ namespace Face_Searcher_GUI.Forms
                         try
                         {
                             //Create the folder
-                            Program.createPostFolder(CV.save_xml_folder);
+                            Program.createDirectory(CV.save_xml_folder);
+                            Program.createDirectory(CV.save_images_folder);
                             //Create the camera in Aureus Edge
                             AureusEdge.CreateCamera(Program.mp_aureus, Int32.Parse(CV.cameraIndex.Trim()), 2, Program.msg);
                         }
@@ -415,7 +416,8 @@ namespace Face_Searcher_GUI.Forms
                             if (Program.usedLicense < Program.numberOfLicense)
                             {
                                 //Create the post folder needed for a camera
-                                Program.createPostFolder(Program.TempCAMs.cameras[i].save_xml_folder);
+                                Program.createDirectory(Program.TempCAMs.cameras[i].save_xml_folder);
+                                Program.createDirectory(Program.TempCAMs.cameras[i].save_images_folder);
                                 //Create the camera
                                 AureusEdge.CreateCamera(Program.mp_aureus, Int32.Parse(Program.TempCAMs.cameras[i].cameraIndex.Trim()), 2, Program.msg);
                                 //Start Camera

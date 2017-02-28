@@ -282,10 +282,17 @@ namespace Face_Searcher_GUI
                 if (IL != null) { IL.Dispose(); }
 
                 Application.Exit();
-                if (exitEnvironment)
+                try
                 {
                     Environment.Exit(0);
+                }catch
+                {
+                    Environment.Exit(1);
                 }
+                //if (exitEnvironment)
+                //{
+                //    Environment.Exit(0);
+                //}
             }
             catch
             {
@@ -507,13 +514,13 @@ namespace Face_Searcher_GUI
         /// Create a directory
         /// </summary>
         /// <param name="folderName"></param>
-        internal static void createPostFolder(string folderName)
+        internal static void createDirectory(string folderName)
         {
             try
             {
-                if (!System.IO.Directory.Exists(@"C:\Allevate\Face-Searcher\Results"))
+                if (!System.IO.Directory.Exists(folderName))
                 {
-                    System.IO.Directory.CreateDirectory(@"C:\Allevate\Face-Searcher\Results");
+                    System.IO.Directory.CreateDirectory(folderName);
                 }
             }
             catch
